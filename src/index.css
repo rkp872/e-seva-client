@@ -1,0 +1,161 @@
+.footer {
+  height: 30px;
+  width: 100vw;
+  background-image: none;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-position: 0% 0%;
+  position: fixed;
+  bottom: 0pt;
+  left: 0pt;
+  text-align: center;
+  background-color: #484b4d;
+  color: white;
+}
+
+.footer_contents {
+  height: 30px;
+  width: 100vw;
+  margin: auto;
+}
+
+.primary-background {
+  background: #2196f3 !important;
+}
+.inp {
+  background-color: #ffebee;
+}
+form label {
+  color: black;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.hidden {
+  display: none;
+}
+
+p {
+  font-family: "Montserrat";
+}
+.pagination {
+  margin: auto;
+  display: flex;
+  list-style: none;
+  outline: none;
+}
+.pagination > .active > a {
+  background-color: #47ccde;
+  border-color: #47ccde;
+  color: #fff;
+}
+.pagination > li > a {
+  border: 1px solid #47ccde;
+  padding: 5px 10px;
+  outline: none;
+  cursor: pointer;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: #47ccde;
+  border-color: #47ccde;
+  outline: none;
+}
+.pagination > li > a,
+.pagination > li > span {
+  color: #47ccde;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span,
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-radius: unset;
+}
+
+.detail_container {
+  margin-top: 10px;
+  padding: 10px;
+
+  box-shadow: 5px 10px #f3e5f5;
+}
+.detail_type {
+  font-family: Arial Rounded MT Bold;
+  font-weight: bold;
+  font-size: 22px;
+}
+.detail_data {
+  font-size: 18px;
+  font-family: serif;
+  margin-left: 10px;
+}
+
+.docs-style {
+  height: 120px;
+  width: 220px;
+  margin-right: 50px;
+}
+
+.search-ul {
+  list-style-type: none;
+}
+/* New Styles */
+.header-img {
+  height: 15vh;
+  width: 60vw;
+}
+.active-nav {
+  text-decoration: underline;
+  font-size: larger;
+}
+
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+.carsol-style {
+  height: 50vh;
+  width: 40vw;
+}
+
+.scroll-left {
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  background: #90a4ae;
+  color: white;
+}
+.scroll-left p {
+  width: 150vh;
+  margin: 0;
+  line-height: 50px;
+  text-align: center;
+  /* Starting position */
+  transform: translateX(100%);
+  /* Apply animation to this element */
+  animation: scroll-left 15s linear infinite;
+}
+/* Move it (define the animation) */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.card {
+  text-align: center;
+  margin-top: 3vh;
+  margin-bottom: 8vh;
+}
+.footer-img {
+  height: 10vh;
+  width: 100vw;
+}
+.footerimgdashboard {
+  height: 15vh;
+  width: 100vw;
+}
