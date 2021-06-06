@@ -1,21 +1,16 @@
 import React, { Component } from "react";
-import Header from "./Header";
-
 import { Link } from "react-router-dom";
-import bgRight from "../../resources/img/bgRight.png";
-import Carousel from "../carousel/Carousel";
-import footerimg from "../../resources/img/footerimg.png";
-
-import vio from "../../resources/img/trafficpolice/registerTrafficViolation.jpg";
-import med from "../../resources/img/trafficpolice/registerMedicalEmergency.png";
-import sos from "../../resources/img/trafficpolice/sos.png";
-import help from "../../resources/img/trafficpolice/helpRequests.jpg";
-
+import covid from "../../resources/docs/covid.pdf";
 import file1 from "../../resources/docs/file1.pdf";
 import file2 from "../../resources/docs/file2.pdf";
 import file3 from "../../resources/docs/file3.pdf";
 import file4 from "../../resources/docs/file4.pdf";
-import covid from "../../resources/docs/covid.pdf";
+import footerimg from "../../resources/img/footerimg.png";
+import help from "../../resources/img/trafficpolice/helpRequests.jpg";
+import med from "../../resources/img/trafficpolice/registerMedicalEmergency.png";
+import vio from "../../resources/img/trafficpolice/registerTrafficViolation.jpg";
+import sos from "../../resources/img/trafficpolice/sos.png";
+import Header from "./Header";
 
 class Dashboard extends Component {
   constructor(props) {
@@ -163,19 +158,31 @@ class Dashboard extends Component {
                   <div className="card-body">
                     <marquee behavior="scroll" direction="up" scrollamount="2">
                       <ul>
-                        <a href={file1} target="_blank">
+                        <a
+                          href={file1}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <li>
                             Office Order Regarding extension of service period
                             of Motor Vehicle Inspector
                           </li>
                         </a>
-                        <a href={file2} target="_blank">
+                        <a
+                          href={file2}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <li>
                             MoM regarding issue of Fitness Certificate of Old
                             Sleeper Buses
                           </li>
                         </a>
-                        <a href={file3} target="_blank">
+                        <a
+                          href={file3}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <li>
                             Corrigendum-i for Empanelment for Development,
                             Customization deployment and Management of
@@ -183,7 +190,11 @@ class Dashboard extends Component {
                           </li>
                         </a>
 
-                        <a href={file4} target="_blank">
+                        <a
+                          href={file4}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <li>
                             Pre-Bid meeting proceeding of Smart Card based
                             Conductor License
@@ -208,26 +219,42 @@ class Dashboard extends Component {
                   <div className="card-body">
                     <marquee behavior="scroll" direction="up" scrollamount="2">
                       <ul>
-                        <a href={covid} target="_blank">
+                        <a
+                          href={covid}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <li>
                             Revised press release related to List of Points to
                             be kept in mind while applying online for issuing
                             E-Pass
                           </li>
                         </a>
-                        <a href={covid} target="_blank">
+                        <a
+                          href={covid}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <li>
                             Press release for movement of Inerstate Intrastate
                             Bus during Health Safety Week
                           </li>
                         </a>
-                        <a href={covid} target="_blank">
+                        <a
+                          href={covid}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <li>
                             SOP for movement of Private Commercial Vehicle
                             during Health Safety Week
                           </li>
                         </a>
-                        <a href={covid} target="_blank">
+                        <a
+                          href={covid}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <li>Press Release for Interstate Bus Service</li>
                         </a>
                       </ul>

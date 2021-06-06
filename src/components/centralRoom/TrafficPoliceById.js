@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Header from "./Header";
-import { Link } from "react-router-dom";
 
 export default class Profile extends Component {
   constructor(props) {
@@ -65,6 +64,7 @@ export default class Profile extends Component {
                           <img
                             className="docs-style"
                             src={this.state.user.aadharCardPicture}
+                            alt=""
                           />
                         </div>
                       </div>
@@ -75,6 +75,7 @@ export default class Profile extends Component {
                           <img
                             className="docs-style"
                             src={this.state.user.govtIdCardPicture}
+                            alt=""
                           />
                         </div>
                       </div>

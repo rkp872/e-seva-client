@@ -13,19 +13,19 @@ export default class CarouselComp extends Component {
       <div>
         <Carousel showThumbs={false} autoPlay={true} infiniteLoop={true}>
           <div>
-            <img className="carsol-style" src={slider1} />
+            <img className="carsol-style" src={slider1} alt="" />
           </div>
           <div>
-            <img className="carsol-style" src={slider2} />
+            <img className="carsol-style" src={slider2} alt="" />
           </div>
           <div>
-            <img className="carsol-style" src={slider3} />
+            <img className="carsol-style" src={slider3} alt="" />
           </div>
           <div>
-            <img className="carsol-style" src={slider4} />
+            <img className="carsol-style" src={slider4} alt="" />
           </div>
           <div>
-            <img className="carsol-style" src={slider5} />
+            <img className="carsol-style" src={slider5} alt="" />
           </div>
         </Carousel>
       </div>

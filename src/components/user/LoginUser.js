@@ -1,6 +1,5 @@
-import { timers } from "jquery";
 import React, { Component } from "react";
-import { Redirect, Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import UserService from "../../services/UserService";
 import Header from "./Header";
 

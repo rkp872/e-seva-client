@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import Header from "./Header";
-import { Link } from "react-router-dom";
 import aadhar from "../../resources/img/Aadhar.png";
+import Header from "./Header";
 
 export default class CommonProfile extends Component {
   constructor(props) {

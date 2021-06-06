@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import footerimg from "../../resources/img/footerimg.png";
 
 export default class Footer extends Component {
   render() {
