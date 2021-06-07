@@ -19,7 +19,7 @@ export default class LoginUser extends Component {
 
   handleLogin = (event) => {
     event.preventDefault();
-    //console.log(this.state);
+
     event.preventDefault();
     UserService.loginUser(this.state)
       .then((res) => {
@@ -35,7 +35,6 @@ export default class LoginUser extends Component {
         this.setState({ login: true });
       })
       .catch((error) => {
-        console.log(error);
         if (error.response) {
           if (error.response.status === 423) {
             this.setState({
@@ -57,12 +56,10 @@ export default class LoginUser extends Component {
       });
   };
   renderDashboard() {
-    // var user = JSON.parse(localStorage.getItem("login"));
     var user = localStorage.getItem("login");
     user = JSON.parse(user);
 
     if (user != null) {
-      console.log(user.token);
       if (user.userType === "ROLE_POLICE")
         return <Redirect to={"/traffic-police/dashboard"} />;
       else if (user.userType === "ROLE_COMMON")

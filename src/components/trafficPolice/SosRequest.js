@@ -20,7 +20,6 @@ export default class SosRequest extends Component {
     event.preventDefault();
     TrafficPoliceService.saveSosRequest(this.state)
       .then((res) => {
-        console.log("Data saved : " + res.data);
         this.props.history.push({
           pathname: "/traffic-police/dashboard",
           message: res.data,

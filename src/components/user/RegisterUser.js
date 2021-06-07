@@ -48,7 +48,6 @@ class RegisterUser extends Component {
 
     UserService.registerUser(formData)
       .then((res) => {
-        console.log(res);
         this.props.history.push({
           pathname: "/login-user",
           message: res.data,
@@ -231,7 +230,6 @@ class RegisterUser extends Component {
                                       aPic.append("file", e.target.files[0]);
                                       ImageUploader.uploadImage(aPic).then(
                                         (res) => {
-                                          console.log(res.data.url);
                                           this.setState({
                                             aadharCardPicture: res.data.url,
                                             uploaded: true,

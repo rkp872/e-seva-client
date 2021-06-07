@@ -15,7 +15,6 @@ export default class HelpRequest extends Component {
   componentDidMount() {
     document.title = "E-Seva | Help Request";
     TrafficPoliceService.getAssignedHelpRequest().then((res) => {
-      //console.log(res.data);
       if (res.data)
         this.setState({
           requestedBy: res.data.requestedBy.name,
@@ -28,21 +27,16 @@ export default class HelpRequest extends Component {
   workingHelpRequest = () => {
     TrafficPoliceService.workingStatusHelpStatus(this.state.sosId).then(
       (res) => {
-        console.log("Inside Service");
-        //this.forceUpdate();
         this.props.history.push({
           pathname: "/traffic-police/dashboard",
           message: res.data,
         });
       }
     );
-    console.log("Working");
   };
   doneHelpRequest = () => {
     TrafficPoliceService.doneStatusHelpStatus(this.state.sosId)
       .then((res) => {
-        console.log("Inside Service");
-        //this.forceUpdate();
         this.props.history.push({
           pathname: "/traffic-police/dashboard",
           message: res.data,
@@ -51,7 +45,6 @@ export default class HelpRequest extends Component {
       .catch((error) => {
         this.props.history.push("/internal-server-error");
       });
-    console.log("Done");
   };
   render() {
     return (

@@ -16,7 +16,6 @@ export default class TrackPayment extends Component {
 
   trackPayment = () => {
     CommonPeopleService.trackPayment(this.state.transactionId).then((res) => {
-      console.log(res.data);
       this.setState({ searchResult: res.data });
     });
   };

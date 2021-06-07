@@ -1,23 +1,21 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Header from "./Header";
-import bgRight from "../../resources/img/bgRight.png";
-import Carousel from "../carousel/Carousel";
-import footerimg from "../../resources/img/footerimg.png";
-import trpolice from "../../resources/img/trpolice.jpg";
-import amb from "../../resources/img/amb.jpg";
-import central from "../../resources/img/central.jpg";
-import common from "../../resources/img/common.jpg";
+import covid from "../../resources/docs/covid.pdf";
 import file1 from "../../resources/docs/file1.pdf";
 import file2 from "../../resources/docs/file2.pdf";
 import file3 from "../../resources/docs/file3.pdf";
 import file4 from "../../resources/docs/file4.pdf";
-import covid from "../../resources/docs/covid.pdf";
+import amb from "../../resources/img/amb.jpg";
+import central from "../../resources/img/central.jpg";
+import common from "../../resources/img/common.jpg";
+import footerimg from "../../resources/img/footerimg.png";
+import trpolice from "../../resources/img/trpolice.jpg";
+import Carousel from "../carousel/Carousel";
+import Header from "./Header";
 
 export default class Homepage extends Component {
   componentDidMount() {
     document.title = "E-Seva | Home";
-    //document.body.style = "background: #e6ffff;";
   }
   render() {
     return (
@@ -33,15 +31,15 @@ export default class Homepage extends Component {
               <Carousel />
             </div>
           </div>
-          <div class="scroll-left">
+          <div className="scroll-left">
             <p>
               Faceless Services have been launched. Citizens are not required to
               visit the RTO for availing any of these services.
             </p>
           </div>
-          <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-              <div class="col">
+          <div className="container">
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+              <div className="col">
                 <div className="card" style={{ backgroundColor: "#e8f5e9" }}>
                   <div className="card-body">
                     <img src={trpolice} alt="" width="100px" height="100px" />
@@ -56,7 +54,7 @@ export default class Homepage extends Component {
                   </div>
                 </div>
               </div>
-              <div class="col">
+              <div className="col">
                 <div className="card" style={{ backgroundColor: "#e8f5e9" }}>
                   <div className="card-body">
                     <img src={central} alt="" width="125px" height="100px" />
@@ -71,7 +69,7 @@ export default class Homepage extends Component {
                   </div>
                 </div>
               </div>
-              <div class="col">
+              <div className="col">
                 <div className="card" style={{ backgroundColor: "#e8f5e9" }}>
                   <div className="card-body">
                     <img src={common} alt="" width="125px" height="100px" />
@@ -87,7 +85,7 @@ export default class Homepage extends Component {
                   </div>
                 </div>
               </div>
-              <div class="col">
+              <div className="col">
                 <div className="card" style={{ backgroundColor: "#e8f5e9" }}>
                   <div className="card-body">
                     <img src={amb} alt="" width="125px" height="100px" />
@@ -104,8 +102,8 @@ export default class Homepage extends Component {
               </div>
             </div>
 
-            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2">
-              <div class="col ">
+            <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2">
+              <div className="col ">
                 {" "}
                 <div
                   className="card"
@@ -167,7 +165,7 @@ export default class Homepage extends Component {
                   </div>
                 </div>
               </div>
-              <div class="col ">
+              <div className="col ">
                 <div
                   className="card"
                   style={{ backgroundColor: "#fafafa", minHeight: "45vh" }}
@@ -227,7 +225,7 @@ export default class Homepage extends Component {
             </div>
           </div>
         </div>
-        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1">
+        <div className="row row-cols-1 row-cols-sm-1 row-cols-md-1">
           <div className="col">
             <img
               src={footerimg}

@@ -26,7 +26,7 @@ class Dashboard extends Component {
     //user = JSON.parse(localStorage.getItem("login"));
     const user = JSON.parse(localStorage.getItem("login"));
     const userData = user.userData;
-    console.log("UserData : ", userData);
+
     this.setState({ user: userData });
   }
   render() {

@@ -30,9 +30,9 @@ export default class RegisterTrafficViolation extends Component {
   }
   handleSubmit = (event) => {
     event.preventDefault();
-    //console.log(this.state);
+
     const formData = new FormData();
-    //formData.append("data", this.state);
+
     formData.append("name", this.state.name);
     formData.append("trafficViolationTypes", this.state.trafficViolationTypes);
     formData.append("phone", this.state.phone);
@@ -45,7 +45,6 @@ export default class RegisterTrafficViolation extends Component {
     formData.append("otherInfo", this.state.otherInfo);
     TrafficPoliceService.saveTrafficViolator(formData)
       .then((res) => {
-        console.log("Data saved : " + res.data);
         this.props.history.push({
           pathname: "/traffic-police/dashboard",
           message: res.data,

@@ -18,10 +18,9 @@ export default class RegisterMedicalEmergency extends Component {
   }
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log("From state : ", this.state);
+
     TrafficPoliceService.saveMedicalEmergency(this.state)
       .then((res) => {
-        console.log("Data saved : " + res.data);
         this.props.history.push({
           pathname: "/traffic-police/dashboard",
           message: res.data,

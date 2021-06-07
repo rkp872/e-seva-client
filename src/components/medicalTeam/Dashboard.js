@@ -17,10 +17,10 @@ class Dashboard extends Component {
 
   componentDidMount() {
     document.title = "E-Seva | Dashboard";
-    //user = JSON.parse(localStorage.getItem("login"));
+
     const user = JSON.parse(localStorage.getItem("login"));
     const userData = user.userData;
-    console.log("UserData : ", userData);
+
     this.setState({ user: userData });
   }
 

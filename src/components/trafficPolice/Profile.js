@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import aadhar from "../../resources/img/Aadhar.png";
 import Header from "./Header";
 
 export default class Profile extends Component {
@@ -14,7 +13,6 @@ export default class Profile extends Component {
     document.title = "E-Seva | Profile";
     const user = JSON.parse(localStorage.getItem("login"));
     const userData = user.userData;
-    console.log("UserData : ", userData);
     this.setState({ user: userData });
   }
   render() {
@@ -43,8 +41,11 @@ export default class Profile extends Component {
                       <div className="detail_container">
                         <div className="detail_type">Aadhar Card Picture</div>
                         <div className="detail_data">
-                          {/* {this.state.user.aadharCardPicture} */}
-                          <img className="docs-style" src={aadhar} alt="" />
+                          <img
+                            className="docs-style"
+                            src={this.state.user.aadharCardPicture}
+                            alt=""
+                          />
                         </div>
                       </div>
 
@@ -66,8 +67,11 @@ export default class Profile extends Component {
                       <div className="detail_container">
                         <div className="detail_type">Self Picture</div>
                         <div className="detail_data">
-                          {/* {this.state.user.selfPicture} */}
-                          <img className="docs-style" src={aadhar} alt="" />
+                          <img
+                            className="docs-style"
+                            src={this.state.user.selfPicture}
+                            alt=""
+                          />
                         </div>
                       </div>
                     </div>
@@ -81,8 +85,11 @@ export default class Profile extends Component {
                       <div className="detail_container">
                         <div className="detail_type">ID Card Picture</div>
                         <div className="detail_data">
-                          {/* {this.state.user.govtIdCardPicture} */}
-                          <img className="docs-style" src={aadhar} alt="" />
+                          <img
+                            className="docs-style"
+                            src={this.state.user.govtIdCardPicture}
+                            alt=""
+                          />
                         </div>
                       </div>
                     </div>

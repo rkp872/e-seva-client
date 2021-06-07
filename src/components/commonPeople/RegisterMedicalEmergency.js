@@ -18,10 +18,9 @@ export default class RegisterMedicalEmergencyCommon extends Component {
   }
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log("From state : ", this.state);
+
     CommonPeopleService.saveMedicalEmergency(this.state)
       .then((res) => {
-        console.log("Data saved : " + res.data);
         this.props.history.push({
           pathname: "/common-people/dashboard",
           message: res.data,

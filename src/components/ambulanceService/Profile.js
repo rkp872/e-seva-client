@@ -9,12 +9,11 @@ export default class Profile extends Component {
       user: "",
     };
   }
-
   componentDidMount() {
     document.title = "E-Seva | Profile";
     const user = JSON.parse(localStorage.getItem("login"));
     const userData = user.userData;
-    console.log("UserData : ", userData);
+
     this.setState({ user: userData });
   }
   render() {
