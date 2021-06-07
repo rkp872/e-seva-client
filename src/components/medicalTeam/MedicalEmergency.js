@@ -82,7 +82,7 @@ export default class MedicalEmergencyList extends Component {
         <Header />
         <div style={{ backgroundColor: "#e6ffff", height: "600px" }}>
           <div className="row">
-            <div className="col-md-6 offset-md-3">
+            <div className="col-md-8 offset-md-2 mt-5">
               <div className="row">
                 <p
                   style={{
@@ -118,40 +118,42 @@ export default class MedicalEmergencyList extends Component {
                   </select>
                 </div>
               </div>
-              <table className="styled-table">
-                <thead>
-                  <tr>
-                    <th>Location</th>
-                    <th>Accident Type</th>
-                    <th>Effected</th>
-                    <th>Registered By</th>
-                    <th>Status</th>
-
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {this.state.tableData.map((tdata, i) => (
+              <div class="table-responsive text-nowrap">
+                <table className="table table-striped">
+                  <thead>
                     <tr>
-                      <td>{tdata.location}</td>
-                      <td>{tdata.accidentType}</td>
-                      <td>{tdata.numberOfPeopleEffected}</td>
-                      <td>{tdata.registeredBy.name}</td>
-                      <td>{tdata.status}</td>
-                      <td>
-                        <Link
-                          to={{
-                            pathname: "/medical-team/serve-medical-emergency",
-                            data: tdata,
-                          }}
-                        >
-                          Serve
-                        </Link>
-                      </td>
+                      <th>Location</th>
+                      <th>Accident Type</th>
+                      <th>Effected</th>
+                      <th>Registered By</th>
+                      <th>Status</th>
+
+                      <th>Action</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {this.state.tableData.map((tdata, i) => (
+                      <tr>
+                        <td>{tdata.location}</td>
+                        <td>{tdata.accidentType}</td>
+                        <td>{tdata.numberOfPeopleEffected}</td>
+                        <td>{tdata.registeredBy.name}</td>
+                        <td>{tdata.status}</td>
+                        <td>
+                          <Link
+                            to={{
+                              pathname: "/medical-team/serve-medical-emergency",
+                              data: tdata,
+                            }}
+                          >
+                            Serve
+                          </Link>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
               <div className="container " style={{ marginLeft: "225px" }}>
                 <ReactPaginate
                   previousLabel={"prev"}

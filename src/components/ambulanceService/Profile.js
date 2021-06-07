@@ -110,20 +110,6 @@ export default class Profile extends Component {
                           />
                         </div>
                       </div>
-                      <div className="container text-center mt-4">
-                        <Link
-                          to="/traffic-police/dashboard"
-                          className="btn btn-primary"
-                        >
-                          Back
-                        </Link>
-                        <Link
-                          to="/traffic-police/dashboard"
-                          className="btn btn-primary ml-2"
-                        >
-                          Edit
-                        </Link>
-                      </div>
                     </div>
                   </div>
                 </div>

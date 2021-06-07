@@ -87,7 +87,7 @@ export default class HelpRequests extends Component {
 
         <div style={{ backgroundColor: "#e6ffff", height: "600px" }}>
           <div className="row">
-            <div className="col-md-8 offset-md-2">
+            <div className="col-md-8 offset-md-2  mt-5">
               <div className="row">
                 <p
                   style={{
@@ -123,82 +123,84 @@ export default class HelpRequests extends Component {
                   </select>
                 </div>
               </div>
-              <table className="styled-table">
-                <thead>
-                  <tr>
-                    <th>Requested By</th>
-                    <th>Location</th>
-                    <th>Info</th>
-                    <th>Status</th>
-                    {this.state.filter === "Pending" ? (
-                      <th>Action</th>
-                    ) : this.state.filter === "Assigned" ? (
-                      <th>Assigned To</th>
-                    ) : this.state.filter === "Served" ? (
-                      <th>Served By</th>
-                    ) : (
-                      ""
-                    )}
-                  </tr>
-                </thead>
-                <tbody>
-                  {this.state.tableData.map((tdata, i) => (
+              <div class="table-responsive text-nowrap">
+                <table className="table table-striped">
+                  <thead>
                     <tr>
-                      <td>{tdata.requestedBy.name}</td>
-                      <td>{tdata.location}</td>
-                      <td>{tdata.info}</td>
-                      <td>{tdata.status}</td>
+                      <th>Requested By</th>
+                      <th>Location</th>
+                      <th>Info</th>
+                      <th>Status</th>
                       {this.state.filter === "Pending" ? (
-                        <td>
-                          <Link
-                            to={{
-                              pathname: "/central-room/serve-help-request",
-                              data: tdata,
-                            }}
-                          >
-                            Serve
-                          </Link>
-                        </td>
+                        <th>Action</th>
                       ) : this.state.filter === "Assigned" ? (
-                        <td>
-                          {tdata.servedBy ? (
-                            <Link
-                              to={{
-                                pathname:
-                                  "/central-room/traffic-police-profile",
-                                data: tdata.servedBy,
-                              }}
-                            >
-                              {tdata.servedBy.name}
-                            </Link>
-                          ) : (
-                            ""
-                          )}
-                        </td>
+                        <th>Assigned To</th>
                       ) : this.state.filter === "Served" ? (
-                        <td>
-                          {" "}
-                          {tdata.servedBy ? (
-                            <Link
-                              to={{
-                                pathname:
-                                  "/central-room/traffic-police-profile",
-                                data: tdata.servedBy,
-                              }}
-                            >
-                              {tdata.servedBy.name}
-                            </Link>
-                          ) : (
-                            ""
-                          )}
-                        </td>
+                        <th>Served By</th>
                       ) : (
                         ""
                       )}
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {this.state.tableData.map((tdata, i) => (
+                      <tr>
+                        <td>{tdata.requestedBy.name}</td>
+                        <td>{tdata.location}</td>
+                        <td>{tdata.info}</td>
+                        <td>{tdata.status}</td>
+                        {this.state.filter === "Pending" ? (
+                          <td>
+                            <Link
+                              to={{
+                                pathname: "/central-room/serve-help-request",
+                                data: tdata,
+                              }}
+                            >
+                              Serve
+                            </Link>
+                          </td>
+                        ) : this.state.filter === "Assigned" ? (
+                          <td>
+                            {tdata.servedBy ? (
+                              <Link
+                                to={{
+                                  pathname:
+                                    "/central-room/traffic-police-profile",
+                                  data: tdata.servedBy,
+                                }}
+                              >
+                                {tdata.servedBy.name}
+                              </Link>
+                            ) : (
+                              ""
+                            )}
+                          </td>
+                        ) : this.state.filter === "Served" ? (
+                          <td>
+                            {" "}
+                            {tdata.servedBy ? (
+                              <Link
+                                to={{
+                                  pathname:
+                                    "/central-room/traffic-police-profile",
+                                  data: tdata.servedBy,
+                                }}
+                              >
+                                {tdata.servedBy.name}
+                              </Link>
+                            ) : (
+                              ""
+                            )}
+                          </td>
+                        ) : (
+                          ""
+                        )}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
               <div className="container " style={{ marginLeft: "225px" }}>
                 <ReactPaginate
                   previousLabel={"prev"}

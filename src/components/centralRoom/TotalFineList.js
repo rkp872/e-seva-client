@@ -81,7 +81,7 @@ export default class TotalFineList extends Component {
         <Header />
         <div style={{ backgroundColor: "#e6ffff", height: "600px" }}>
           <div className="row">
-            <div className="col-md-6 offset-md-3">
+            <div className="col-md-6 offset-md-3  mt-5">
               <div className="row">
                 <p
                   style={{
@@ -114,33 +114,36 @@ export default class TotalFineList extends Component {
                   </select>
                 </div>
               </div>
-              <table className="styled-table">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Fine Amoun</th>
-                    <th>Offence</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {this.state.tableData.map((tdata, i) => (
+              <div class="table-responsive text-nowrap">
+                <table className="table table-striped">   
+                  <thead>
                     <tr>
-                      <td>
-                        <Link
-                          to={{
-                            pathname: "/central-room/traffic-violator-details",
-                            data: tdata,
-                          }}
-                        >
-                          {tdata.name}
-                        </Link>
-                      </td>
-                      <td>{tdata.trafficViolationTypes.fineAmount}</td>
-                      <td>{tdata.trafficViolationTypes.offence}</td>
+                      <th>Name</th>
+                      <th>Fine Amoun</th>
+                      <th>Offence</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {this.state.tableData.map((tdata, i) => (
+                      <tr>
+                        <td>
+                          <Link
+                            to={{
+                              pathname:
+                                "/central-room/traffic-violator-details",
+                              data: tdata,
+                            }}
+                          >
+                            {tdata.name}
+                          </Link>
+                        </td>
+                        <td>{tdata.trafficViolationTypes.fineAmount}</td>
+                        <td>{tdata.trafficViolationTypes.offence}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
               <div className="container " style={{ marginLeft: "225px" }}>
                 <ReactPaginate
                   previousLabel={"prev"}

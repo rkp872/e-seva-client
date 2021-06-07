@@ -81,7 +81,7 @@ export default class AmbulanceList extends Component {
         <Header />
         <div style={{ backgroundColor: "#e6ffff", height: "600px" }}>
           <div className="row">
-            <div className="col-md-6 offset-md-3">
+            <div className="col-md-6 offset-md-3 mt-5">
               <div className="row">
                 <p
                   style={{
@@ -114,27 +114,29 @@ export default class AmbulanceList extends Component {
                   </select>
                 </div>
               </div>
-              <table className="styled-table">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>DL Number</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {this.state.tableData.map((tdata, i) => (
+              <div class="table-responsive text-nowrap">
+                <table className="table table-striped">
+                  <thead>
                     <tr>
-                      <td>{tdata.name}</td>
-                      <td>{tdata.email}</td>
-
-                      <td>{tdata.drivingLicenceNumber}</td>
-                      <td>{tdata.status}</td>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>DL Number</th>
+                      <th>Status</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {this.state.tableData.map((tdata, i) => (
+                      <tr>
+                        <td>{tdata.name}</td>
+                        <td>{tdata.email}</td>
+
+                        <td>{tdata.drivingLicenceNumber}</td>
+                        <td>{tdata.status}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
               <div className="container " style={{ marginLeft: "225px" }}>
                 <ReactPaginate
                   previousLabel={"prev"}
