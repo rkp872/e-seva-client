@@ -10,11 +10,18 @@ export default class Header extends Component {
           className="navbar navbar-expand-lg navbar-dark "
           style={{ backgroundColor: "#90a4ae" }}
         >
-          <img
-            src={logo}
-            alt="ESeva"
-            style={{ height: "59px", margin: "3px 6px", borderRadius: "8px" }}
-          ></img>
+          <NavLink
+            to="/common-people/dashboard"
+            className="nav-link "
+            id="nav-home"
+            exact
+          >
+            <img
+              src={logo}
+              alt="ESeva"
+              style={{ height: "59px", margin: "3px 6px", borderRadius: "8px" }}
+            ></img>
+          </NavLink>
 
           <button
             className="navbar-toggler"

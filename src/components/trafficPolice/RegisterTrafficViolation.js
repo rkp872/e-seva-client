@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TrafficPoliceService from "../../services/TrafficPoliceService";
 import Header from "./Header";
+import LocationService from "../../services/LocationService";
 import ImageUploader from "../../services/ImageUploader";
 
 export default class RegisterTrafficViolation extends Component {
@@ -254,7 +255,7 @@ export default class RegisterTrafficViolation extends Component {
                         </div>
                       </div>
                       <div className="row">
-                        <div className="col-md-2 m-2">
+                        <div className="col-md-3 m-2">
                           <div className="mb-3">
                             <label htmlFor="location" className="form-label">
                               Location
@@ -263,11 +264,35 @@ export default class RegisterTrafficViolation extends Component {
                               type="text"
                               className="form-control"
                               id="location"
+                              value={this.state.location}
                               onChange={(e) => {
                                 this.setState({ location: e.target.value });
                               }}
                             />
                           </div>
+                          {
+                            <div className="container text-center">
+                              <button
+                                type="button"
+                                className="btn btn-outline-primary btn-sm "
+                                onClick={() => {
+                                  LocationService.getMyLocation()
+                                    .then((res) => res.json())
+                                    .then((data) => {
+                                      console.log(data);
+                                      this.setState({
+                                        location:
+                                          data.locality +
+                                          "," +
+                                          data.principalSubdivision,
+                                      });
+                                    });
+                                }}
+                              >
+                                Locate Me
+                              </button>
+                            </div>
+                          }
                         </div>
                         <div className="col-md-2 m-2">
                           <div className="mb-3">
