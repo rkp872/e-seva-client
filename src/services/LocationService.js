@@ -9,8 +9,8 @@ class LocationService {
     if (location) {
       location.getCurrentPosition(
         function (position) {
-          latitude = position.coords.latitude;
-          longitude = position.coords.longitude;
+          latitude = position.coords.latitude + 2;
+          longitude = position.coords.longitude - 3;
           console.log(latitude);
           console.log(longitude);
         },

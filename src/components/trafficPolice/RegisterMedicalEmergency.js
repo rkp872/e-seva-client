@@ -79,17 +79,21 @@ export default class RegisterMedicalEmergency extends Component {
                           {
                             <div className="container text-center">
                               <button
-                                type="button"  
+                                type="button"
                                 className="btn btn-outline-primary btn-sm "
                                 onClick={() => {
                                   LocationService.getMyLocation()
                                     .then((res) => res.json())
                                     .then((data) => {
                                       console.log(data);
+                                      console.log(
+                                        data.localityInfo.administrative[3].name
+                                      );
                                       this.setState({
                                         location:
-                                          data.locality +
-                                          "," +
+                                          data.localityInfo.administrative[3]
+                                            .name +
+                                          " , " +
                                           data.principalSubdivision,
                                       });
                                     });

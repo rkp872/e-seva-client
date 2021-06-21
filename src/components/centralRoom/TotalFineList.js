@@ -115,11 +115,11 @@ export default class TotalFineList extends Component {
                 </div>
               </div>
               <div class="table-responsive text-nowrap">
-                <table className="table table-striped">   
+                <table className="table table-striped">
                   <thead>
                     <tr>
                       <th>Name</th>
-                      <th>Fine Amoun</th>
+                      <th>Fine Amount</th>
                       <th>Offence</th>
                     </tr>
                   </thead>

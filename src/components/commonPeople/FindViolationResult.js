@@ -69,7 +69,7 @@ export default class FindViolationResult extends Component {
         <Header />
         <div style={{ backgroundColor: "#e6ffff", height: "600px" }}>
           <div className="row">
-            <div className="col-md-8 offset-2">
+            <div className="col-md-10 offset-1">
               <div class="table-responsive text-nowrap">
                 <table className="table table-striped">
                   <thead>
