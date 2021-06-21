@@ -127,8 +127,7 @@ export default class MedicalEmergencyList extends Component {
                       <th>Effected</th>
                       <th>Registered By</th>
                       <th>Status</th>
-
-                      <th>Action</th>
+                      {this.state.filter === "Pending" ? <th>Action</th> : ""}
                     </tr>
                   </thead>
                   <tbody>
@@ -139,15 +138,21 @@ export default class MedicalEmergencyList extends Component {
                         <td>{tdata.numberOfPeopleEffected}</td>
                         <td>{tdata.registeredBy.name}</td>
                         <td>{tdata.status}</td>
+
                         <td>
-                          <Link
-                            to={{
-                              pathname: "/medical-team/serve-medical-emergency",
-                              data: tdata,
-                            }}
-                          >
-                            Serve
-                          </Link>
+                          {this.state.filter === "Pending" ? (
+                            <Link
+                              to={{
+                                pathname:
+                                  "/medical-team/serve-medical-emergency",
+                                data: tdata,
+                              }}
+                            >
+                              Serve
+                            </Link>
+                          ) : (
+                            ""
+                          )}
                         </td>
                       </tr>
                     ))}

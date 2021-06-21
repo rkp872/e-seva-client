@@ -44,6 +44,7 @@ import TrackPayment from "./components/commonPeople/TrackPayment";
 import CommonProfile from "./components/commonPeople/Profile";
 import RegisterMedicalEmergencyCommon from "./components/commonPeople/RegisterMedicalEmergency";
 import VerifyUser from "./components/user/VerifyUser";
+import Receipt from "./components/commonPeople/PaymentGateway/Receipt";
 
 class App extends Component {
   user = JSON.parse(localStorage.getItem("login") === null);
@@ -234,6 +235,7 @@ class App extends Component {
               exact
               component={RegisterMedicalEmergencyCommon}
             />
+            <Route path="/common-people/receipt" exact component={Receipt} />
 
             <Route path="/forgot-password" exact component={ForgotPassword} />
             <Route path="/reset/:token" component={NewPassword} exact />

@@ -1,8 +1,8 @@
 import axios from "axios";
 import { serverUrl } from "./../const";
 class CommonPeopleService {
-  getOwnTrafficViolation() {
-    var url = `${serverUrl}/common-people/my-offense`,
+  getOwnTrafficViolation(filter) {
+    var url = `${serverUrl}/common-people/my-offense/${filter}`,
       user = JSON.parse(localStorage.getItem("login"));
     var token = user.token;
 
@@ -14,6 +14,18 @@ class CommonPeopleService {
   }
   searchByEmail(email) {
     var url = `${serverUrl}/common-people/traffic-violator-by-email`,
+      user = JSON.parse(localStorage.getItem("login"));
+    var token = user.token;
+    return axios.post(url, email, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+
+  // //payment-receipt-data
+  getPaymentData(email) {
+    var url = `${serverUrl}/common-people/payment-receipt-data`,
       user = JSON.parse(localStorage.getItem("login"));
     var token = user.token;
     return axios.post(url, email, {

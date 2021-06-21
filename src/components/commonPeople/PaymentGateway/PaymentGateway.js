@@ -19,8 +19,8 @@ export default class PaymentGateway extends Component {
     CommonPeopleService.finePayment(formData)
       .then((res) => {
         this.props.history.push({
-          pathname: "/common-people/dashboard",
-          message: res.data,
+          pathname: "/common-people/receipt",
+          emailData: this.state.violator.email,
         });
       })
       .catch((error) => {
@@ -30,7 +30,7 @@ export default class PaymentGateway extends Component {
   render() {
     return (
       <>
-        <Header />
+        
         <div style={{ backgroundColor: "#e6ffff", height: "600px" }}>
           <div className="row">
             <div className="col-md-4 offset-2">

@@ -8,6 +8,7 @@ export default class MyOffence extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      filter: "Pending",
       offset: 0,
       tableData: [],
       orgtableData: [],
@@ -50,7 +51,7 @@ export default class MyOffence extends Component {
     this.getData();
   }
   getData() {
-    CommonPeopleService.getOwnTrafficViolation()
+    CommonPeopleService.getOwnTrafficViolation(this.state.filter)
       .then((res) => {
         var data = res.data;
 
@@ -69,6 +70,12 @@ export default class MyOffence extends Component {
         this.props.history.push("/internal-server-error");
       });
   }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.filter !== this.state.filter) {
+      this.getData();
+    }
+  }
+
   render() {
     return (
       <>
@@ -76,6 +83,38 @@ export default class MyOffence extends Component {
         <div style={{ backgroundColor: "#e6ffff", height: "600px" }}>
           <div className="row">
             <div className="col-md-8 offset-md-2 mt-5">
+              <div className="row">
+                <p
+                  style={{
+                    fontFamily: "Arial Black",
+                    fontWeight: "bold",
+                    marginTop: "10px",
+                    marginLeft: "40px",
+                  }}
+                >
+                  Filter :
+                </p>
+                <div className="col-md-4">
+                  <select
+                    className="form-control form-select-lg mb-3 inp"
+                    aria-label=".form-select-lg example"
+                    defaultValue={"Pending"}
+                    onChange={(e) => {
+                      this.setState({ filter: e.target.value });
+                    }}
+                  >
+                    <option className="form-group" value="All">
+                      All
+                    </option>
+                    <option value="Pending" className="form-group">
+                      Pending
+                    </option>
+                    <option value="Paid" className="form-group">
+                      Paid
+                    </option>
+                  </select>
+                </div>
+              </div>
               <div class="table-responsive text-nowrap">
                 <table className="table table-striped">
                   <thead>
@@ -87,7 +126,7 @@ export default class MyOffence extends Component {
 
                       <th>Fine</th>
                       <th>Status</th>
-                      <th>Action</th>
+                      {this.state.filter === "Pending" ? <th>Action</th> : ""}
                     </tr>
                   </thead>
                   <tbody>
@@ -111,14 +150,18 @@ export default class MyOffence extends Component {
                         <td>{tdata.trafficViolationTypes.fineAmount}</td>
                         <td>{tdata.paymentStatus}</td>
                         <td>
-                          <Link
-                            to={{
-                              pathname: "/common-people/payment-gateway",
-                              data: tdata,
-                            }}
-                          >
-                            Pay
-                          </Link>
+                          {this.state.filter === "Pending" ? (
+                            <Link
+                              to={{
+                                pathname: "/common-people/payment-gateway",
+                                data: tdata,
+                              }}
+                            >
+                              Pay
+                            </Link>
+                          ) : (
+                            ""
+                          )}
                         </td>
                       </tr>
                     ))}
