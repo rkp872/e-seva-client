@@ -105,14 +105,18 @@ export default class FindViolationResult extends Component {
                         <td>{tdata.trafficViolationTypes.fineAmount}</td>
                         <td>{tdata.paymentStatus}</td>
                         <td>
-                          <Link
-                            to={{
-                              pathname: "/common-people/payment-gateway",
-                              data: tdata,
-                            }}
-                          >
-                            Pay
-                          </Link>
+                          {tdata.paymentStatus === "Pending" ? (
+                            <Link
+                              to={{
+                                pathname: "/common-people/payment-gateway",
+                                data: tdata,
+                              }}
+                            >
+                              Pay
+                            </Link>
+                          ) : (
+                            "--"
+                          )}
                         </td>
                       </tr>
                     ))}

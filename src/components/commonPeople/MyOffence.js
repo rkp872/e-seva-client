@@ -126,7 +126,7 @@ export default class MyOffence extends Component {
 
                       <th>Fine</th>
                       <th>Status</th>
-                      {this.state.filter === "Pending" ? <th>Action</th> : ""}
+                      {this.state.filter !== "Paid" ? <th>Action</th> : ""}
                     </tr>
                   </thead>
                   <tbody>
@@ -150,15 +150,19 @@ export default class MyOffence extends Component {
                         <td>{tdata.trafficViolationTypes.fineAmount}</td>
                         <td>{tdata.paymentStatus}</td>
                         <td>
-                          {this.state.filter === "Pending" ? (
-                            <Link
-                              to={{
-                                pathname: "/common-people/payment-gateway",
-                                data: tdata,
-                              }}
-                            >
-                              Pay
-                            </Link>
+                          {this.state.filter !== "Paid" ? (
+                            tdata.paymentStatus == "Pending" ? (
+                              <Link
+                                to={{
+                                  pathname: "/common-people/payment-gateway",
+                                  data: tdata,
+                                }}
+                              >
+                                Pay
+                              </Link>
+                            ) : (
+                              "--"
+                            )
                           ) : (
                             ""
                           )}
