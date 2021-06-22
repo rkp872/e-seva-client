@@ -20,7 +20,7 @@ export default class PaymentGateway extends Component {
       .then((res) => {
         this.props.history.push({
           pathname: "/common-people/receipt",
-          emailData: this.state.violator.email,
+          transactionDetails: res.data,
         });
       })
       .catch((error) => {
@@ -30,7 +30,6 @@ export default class PaymentGateway extends Component {
   render() {
     return (
       <>
-        
         <div style={{ backgroundColor: "#e6ffff", height: "600px" }}>
           <div className="row">
             <div className="col-md-4 offset-2">

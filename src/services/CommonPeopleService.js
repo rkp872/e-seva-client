@@ -23,18 +23,6 @@ class CommonPeopleService {
     });
   }
 
-  // //payment-receipt-data
-  getPaymentData(email) {
-    var url = `${serverUrl}/common-people/payment-receipt-data`,
-      user = JSON.parse(localStorage.getItem("login"));
-    var token = user.token;
-    return axios.post(url, email, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-  }
-
   searchByDL(dl) {
     var url = `${serverUrl}/common-people/traffic-violator-by-dl`,
       user = JSON.parse(localStorage.getItem("login"));

@@ -7,19 +7,11 @@ export default class Receipt extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      emailData: this.props.location.emailData,
-      receipt: "",
+      receipt: this.props.location.transactionDetails,
     };
   }
   componentDidMount() {
     document.title = "E-Seva | Payment Gateway";
-    var formData = new FormData();
-    formData.append("email", this.state.emailData);
-    CommonPeopleService.getPaymentData(formData).then((res) => {
-      this.setState({ receipt: res.data });
-      //console.log(res.data);.
-      console.log(this.state.receipt.violator.name);
-    });
   }
   printHandler = () => {
     //window.print();

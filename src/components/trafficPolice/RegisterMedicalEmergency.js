@@ -91,9 +91,8 @@ export default class RegisterMedicalEmergency extends Component {
                                       );
                                       this.setState({
                                         location:
-                                          data.localityInfo.administrative[3]
-                                            .name +
-                                          " , " +
+                                          data.locality +
+                                          "," +
                                           data.principalSubdivision,
                                       });
                                     });
