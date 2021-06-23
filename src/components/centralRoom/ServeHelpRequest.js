@@ -78,61 +78,59 @@ export default class ServeHelpRequest extends Component {
         <div style={{ backgroundColor: "#e6ffff", height: "600px" }}>
           <div className="row">
             <div className="col-md-6 offset-3">
-              <div className="card shadow-lg p-2 bg-white rounded mt-5">
-                <div className="card-body">
-                  <h4
-                    className="text-center"
-                    style={{ fontFamily: "Arial Black", color: "#757575" }}
-                  >
-                    Free Traffic Police
-                  </h4>
-                  <table className="styled-table">
-                    <thead>
+              <h4
+                className="text-center m-4"
+                style={{ fontFamily: "Arial Black", color: "#757575" }}
+              >
+                Free Traffic Police
+              </h4>
+              <div class="table-responsive text-nowrap">
+                <table className="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {this.state.tableData.map((tdata, i) => (
                       <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {this.state.tableData.map((tdata, i) => (
-                        <tr>
-                          <td>{tdata.name}</td>
-                          <td>{tdata.email}</td>
+                        <td>{tdata.name}</td>
+                        <td>{tdata.email}</td>
 
-                          <td>
-                            <Link
-                              to={{
-                                pathname: "/central-room/assign-help-request",
-                                data: {
-                                  policeId: tdata.id,
-                                  helpRequestId: this.state.helpRequest.id,
-                                },
-                              }}
-                            >
-                              Assign
-                            </Link>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                  <div className="container " style={{ marginLeft: "225px" }}>
-                    <ReactPaginate
-                      previousLabel={"prev"}
-                      nextLabel={"next"}
-                      breakLabel={"..."}
-                      breakClassName={"break-me"}
-                      pageCount={this.state.pageCount}
-                      marginPagesDisplayed={2}
-                      pageRangeDisplayed={5}
-                      onPageChange={this.handlePageClick}
-                      containerClassName={"pagination"}
-                      subContainerClassName={"pages pagination"}
-                      activeClassName={"active"}
-                    />
-                  </div>
-                </div>
+                        <td>
+                          <Link
+                            to={{
+                              pathname: "/central-room/assign-help-request",
+                              data: {
+                                policeId: tdata.id,
+                                helpRequestId: this.state.helpRequest.id,
+                              },
+                            }}
+                          >
+                            Assign
+                          </Link>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="container " style={{ marginLeft: "225px" }}>
+                <ReactPaginate
+                  previousLabel={"prev"}
+                  nextLabel={"next"}
+                  breakLabel={"..."}
+                  breakClassName={"break-me"}
+                  pageCount={this.state.pageCount}
+                  marginPagesDisplayed={2}
+                  pageRangeDisplayed={5}
+                  onPageChange={this.handlePageClick}
+                  containerClassName={"pagination"}
+                  subContainerClassName={"pages pagination"}
+                  activeClassName={"active"}
+                />
               </div>
             </div>
           </div>
